@@ -14,10 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
     "Gauri… will you let me keep choosing you, today and always? ❤️"
   ];
 
-  const images = [];
-  for (let i = 1; i <= 11; i++) {
-    images.push(`images/${i}.jpg`);
+  let images = [];
+for (let i = 1; i <= 11; i++) {
+  images.push(`images/${i}.jpg`);
+}
+
+// Fisher-Yates Shuffle
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+}
+
+shuffle(images);
+
 
   let index = 0;
 
