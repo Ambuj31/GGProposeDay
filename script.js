@@ -71,20 +71,27 @@ function typeWriterEffect(element, text) {
       clearInterval(typing);
       element.classList.remove("typewriter");
 
-      // SHOW SIGNATURE AFTER LAST MESSAGE
-      setTimeout(showSignature, 1200);
+      // Show signature after typing ends
+      setTimeout(addSignatureCard, 1200);
     }
   }, 60);
 }
-function showSignature() {
-  const signature = document.getElementById("signature");
-  signature.classList.remove("hidden");
 
-  // small delay for smoother appearance
-  setTimeout(() => {
-    signature.classList.add("show");
-  }, 100);
+function addSignatureCard() {
+  const card = document.createElement("div");
+  card.className = "message signature-card";
+
+  card.innerHTML = `
+    <h1>— Ambuj 🤍</h1>
+    <a href="https://wa.me/9111113431" target="_blank">
+      Reply whenever you feel ready
+    </a>
+  `;
+
+  messagesContainer.appendChild(card);
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
+
 
 
 
