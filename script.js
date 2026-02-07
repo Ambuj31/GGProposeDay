@@ -119,4 +119,4 @@ function showNextMessage() {
   }
 }
 
-setInterval(showNextMessage, 4000);
+setInterval(showNextMessage, 1500);
