@@ -35,7 +35,7 @@ const messages = [
   "Through everything, you remained my constant",
   "Gauri… you mean more to me than words can express",
   "So today, with all my heart…",
-  "Will you be mine, forever? ❤️"
+  "Will you be mine, forever? "
 ];
 
 let messageIndex = 0;
@@ -50,7 +50,6 @@ function addMessage(text, isLast) {
     msg.classList.add("latest", "typewriter");
     messagesContainer.appendChild(msg);
     typeWriterEffect(msg, text);
-    startHearts(msg);
   } else {
     msg.textContent = text;
     messagesContainer.appendChild(msg);
@@ -71,11 +70,20 @@ function typeWriterEffect(element, text) {
       clearInterval(typing);
       element.classList.remove("typewriter");
 
-      // Show signature after typing ends
+      // ✅ Append ONE clean heart
+      const heartSpan = document.createElement("span");
+      heartSpan.textContent = " ❤️";
+      element.appendChild(heartSpan);
+
+      // ✅ Start floating hearts AFTER text is done
+      startHearts(element);
+
+      // Show signature
       setTimeout(addSignatureCard, 1200);
     }
   }, 60);
 }
+
 
 function addSignatureCard() {
   const card = document.createElement("div");
