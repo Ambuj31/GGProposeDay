@@ -66,12 +66,26 @@ function typeWriterEffect(element, text) {
   const typing = setInterval(() => {
     element.textContent += text.charAt(i);
     i++;
+
     if (i === text.length) {
       clearInterval(typing);
       element.classList.remove("typewriter");
+
+      // SHOW SIGNATURE AFTER LAST MESSAGE
+      setTimeout(showSignature, 1200);
     }
   }, 60);
 }
+function showSignature() {
+  const signature = document.getElementById("signature");
+  signature.classList.remove("hidden");
+
+  // small delay for smoother appearance
+  setTimeout(() => {
+    signature.classList.add("show");
+  }, 100);
+}
+
 
 
 function startHearts(parent) {
