@@ -28,12 +28,12 @@ setInterval(changeImage, 4000);
 
 
 const messages = [
-  "From the very first day, you felt different.",
-  "Somehow, conversations with you felt effortless.",
-  "Your presence made even ordinary moments special.",
-  "I found comfort, laughter, and peace in you.",
-  "Through everything, you remained my constant.",
-  "Gauri… you mean more to me than words can express.",
+  "From the very first day, you felt different",
+  "Somehow, conversations with you felt effortless",
+  "Your presence made even ordinary moments special",
+  "I found comfort, laughter, and peace in you",
+  "Through everything, you remained my constant",
+  "Gauri… you mean more to me than words can express",
   "So today, with all my heart…",
   "Will you be mine, forever? ❤️"
 ];
