@@ -183,3 +183,44 @@ body {
     font-size: 14px;
   }
 }
+/* =========================
+   TYPEWRITER EFFECT
+   ========================= */
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(255,255,255,0.8);
+  animation: caretBlink 0.8s step-end infinite;
+}
+
+@keyframes caretBlink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* =========================
+   FLOATING HEARTS
+   ========================= */
+
+.heart {
+  position: absolute;
+  bottom: 20px;
+  font-size: 18px;
+  color: rgba(230, 57, 70, 0.9);
+  animation: floatUp 4s ease-in forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-180px) scale(1.4);
+    opacity: 0;
+  }
+}
+
