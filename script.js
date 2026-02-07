@@ -26,9 +26,6 @@ function changeImage() {
 
 setInterval(changeImage, 4000);
 
-/* =========================
-   PROPOSE DAY MESSAGES
-   ========================= */
 
 const messages = [
   "From the very first day, you felt different.",
@@ -44,9 +41,6 @@ const messages = [
 let messageIndex = 0;
 const messagesContainer = document.getElementById("messages");
 
-/* =========================
-   MESSAGE HANDLER
-   ========================= */
 
 function addMessage(text, isLast) {
   const msg = document.createElement("div");
@@ -79,9 +73,6 @@ function typeWriterEffect(element, text) {
   }, 60);
 }
 
-/* =========================
-   FLOATING HEARTS
-   ========================= */
 
 function startHearts(parent) {
   const heartInterval = setInterval(() => {
@@ -98,9 +89,6 @@ function startHearts(parent) {
   setTimeout(() => clearInterval(heartInterval), 6000);
 }
 
-/* =========================
-   AUTO MESSAGE PLAY
-   ========================= */
 
 function showNextMessage() {
   if (messageIndex < messages.length) {
