@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const messagesText = [
-    "Your absence is stronger to me than the presence of thousands of other people.",
-    "You make me smile so easily. Can you be there, to do it forever?",
-    "You have been a source of strength and support for me.",
-    "I was alone in life, but when you came, you brought colours.",
-    "You make ordinary moments feel special.",
-    "You are my calm in chaos.",
-    "Life feels kinder with you in it.",
-    "I choose you, always.",
-    "Every day I love you a little more.",
-    "You are my favorite thought.",
-    "I'm sure about one thing — I love you ❤️"
+  const messages = [
+    "Gauri, some days feel heavier just because you’re not around.",
+    "Your presence has a way of making everything feel calmer, safer.",
+    "I don’t say this often, but you’ve been my strength more times than you know.",
+    "From random talks to quiet moments, every memory with you feels special.",
+    "Life didn’t change overnight — it changed the moment you became a part of it.",
+    "I don’t love you for perfection, I love you for being you.",
+    "Even on difficult days, choosing you feels effortless.",
+    "I don’t know what the future holds, but I know who I want in it.",
+    "I’m not in a hurry — I’m patient, because you’re worth waiting for.",
+    "No pressure, no expectations — just honesty, respect, and love.",
+    "Gauri… will you let me keep choosing you, today and always? ❤️"
   ];
 
   const images = [];
@@ -25,33 +25,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const image = document.getElementById("heroImage");
 
   function showNext() {
-    if (index >= messagesText.length) return;
+    if (index >= messages.length) return;
 
-    // Remove red from old message
+    // Remove red highlight from previous message
     const prev = document.querySelector(".message.latest");
     if (prev) prev.classList.remove("latest");
 
-    // Add message
+    // Create new message
     const msg = document.createElement("div");
     msg.className = "message latest";
-    msg.textContent = messagesText[index];
+    msg.textContent = messages[index];
     messagesContainer.appendChild(msg);
 
     msg.scrollIntoView({ behavior: "smooth" });
 
-    // Change image
+    // Image change (safe index)
     image.style.opacity = 0;
     setTimeout(() => {
-      image.src = images[index];
+      image.src = images[Math.min(index, images.length - 1)];
       image.style.opacity = 1;
     }, 500);
 
     index++;
   }
 
-  // Show first immediately
+  // First message immediately
   showNext();
 
-  // Auto play every 4 seconds
-  setInterval(showNext, 4000);
+  // Auto-play every 4 seconds
+  const interval = setInterval(() => {
+    showNext();
+    if (index >= messages.length) clearInterval(interval);
+  }, 4000);
 });
