@@ -70,19 +70,20 @@ function typeWriterEffect(element, text) {
       clearInterval(typing);
       element.classList.remove("typewriter");
 
-      // ✅ Append ONE clean heart
+      // ❤️ ONE clean heart at the end of text
       const heartSpan = document.createElement("span");
       heartSpan.textContent = " ❤️";
       element.appendChild(heartSpan);
 
-      // ✅ Start floating hearts AFTER text is done
-      startHearts(element);
+      // 💕 Floating hearts (GLOBAL, not inside message)
+      startHearts();
 
-      // Show signature
+      // Signature after a pause
       setTimeout(addSignatureCard, 1200);
     }
   }, 60);
 }
+
 
 
 function addSignatureCard() {
@@ -100,24 +101,21 @@ function addSignatureCard() {
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
-
-
-
-function startHearts(parent) {
+function startHearts() {
   const heartInterval = setInterval(() => {
     const heart = document.createElement("span");
     heart.className = "heart";
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 90 + "%";
-    parent.appendChild(heart);
+    heart.textContent = "❤️";
+    heart.style.left = Math.random() * 90 + "vw";
+    heart.style.bottom = "20px";
+
+    document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(), 4000);
   }, 350);
 
-  // Stop hearts after 6 seconds (classy, not noisy)
   setTimeout(() => clearInterval(heartInterval), 6000);
 }
-
 
 function showNextMessage() {
   if (messageIndex < messages.length) {
