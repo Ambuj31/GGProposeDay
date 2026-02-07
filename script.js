@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const messages = [
-    "Gauri, some days feel heavier just because you’re not around.",
+    "Gauri,some days feel heavier just because you’re not around.",
     "Your presence has a way of making everything feel calmer, safer.",
     "I don’t say this often, but you’ve been my strength more times than you know.",
     "From random talks to quiet moments, every memory with you feels special.",
