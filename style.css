@@ -250,3 +250,35 @@ body {
 .signature-card a:hover {
   text-decoration: underline;
 }
+
+/* =========================
+   FINAL PROPOSAL MESSAGE FIX
+   ========================= */
+
+.message.latest {
+  letter-spacing: normal;
+  word-spacing: normal;
+  white-space: normal;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Ensure emoji renders cleanly on mobile */
+.message.latest span,
+.message.latest {
+  font-variant-ligatures: none;
+}
+
+/* Mobile-specific polish */
+@media (max-width: 480px) {
+  .message.latest {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding: 16px 18px;
+  }
+}
+
+.message.latest {
+  box-shadow: 0 10px 24px rgba(230, 57, 70, 0.35);
+}
+
